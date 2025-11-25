@@ -62,13 +62,11 @@ export class Article {
   })
   tags: Tag[];
 
-  // Auto-generate slug from title before insert
   @BeforeInsert()
   generateSlug() {
     this.slug = this.slugify(this.title);
   }
 
-  // Update slug if title changes
   @BeforeUpdate()
   updateSlug() {
     this.slug = this.slugify(this.title);
