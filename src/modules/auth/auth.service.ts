@@ -70,7 +70,7 @@ export class AuthService {
         return this.buildUserResponse(user);
     }
 
-    private buildUserResponse(user: User): UserResponse {
+    public buildUserResponse(user: User): UserResponse {
         const token = this.generateJwt(user);
 
         return new UserResponse({
@@ -89,5 +89,6 @@ export class AuthService {
             username: user.username,
         });
     }
+    
 }
 
